@@ -1,6 +1,5 @@
 package uk.co.atomicmedia.developertest.data.repository
 
-import uk.co.atomicmedia.developertest.data.api.coroutines.CoroutineNewsApi
 import uk.co.atomicmedia.developertest.data.api.coroutines.ICoroutineNewsApi
 import uk.co.atomicmedia.developertest.data.mappers.toHeadline
 import uk.co.atomicmedia.developertest.data.mappers.toStory
