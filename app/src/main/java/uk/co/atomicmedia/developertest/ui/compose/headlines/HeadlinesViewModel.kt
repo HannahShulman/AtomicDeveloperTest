@@ -2,20 +2,17 @@ package uk.co.atomicmedia.developertest.ui.compose.headlines
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import uk.co.atomicmedia.developertest.data.repository.NewsRepository
-import uk.co.atomicmedia.developertest.data.repository.NewsRepositoryImpl
 import uk.co.atomicmedia.developertest.domain.usecases.GetHeadlinesUseCase
 import uk.co.atomicmedia.developertest.ui.intents.HeadlineIntent
+import javax.inject.Inject
 
-class HeadlinesViewModel : ViewModel() {
-
-    private val newsRepository: NewsRepository = NewsRepositoryImpl()
-
-    val getHeadlinesUseCase = GetHeadlinesUseCase(newsRepository)
+@HiltViewModel
+class HeadlinesViewModel @Inject constructor(val getHeadlinesUseCase: GetHeadlinesUseCase) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HeadlinesUiState())
     val uiState: StateFlow<HeadlinesUiState> = _uiState

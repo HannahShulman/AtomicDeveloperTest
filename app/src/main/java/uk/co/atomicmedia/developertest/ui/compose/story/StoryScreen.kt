@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -19,17 +18,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import uk.co.atomicmedia.developertest.ui.compose.general.LoadingScreen
 import uk.co.atomicmedia.developertest.ui.intents.StoryIntent
-import java.text.SimpleDateFormat
-import java.util.Locale
 
 @Composable
 fun StoryScreen(
     modifier: Modifier = Modifier,
-    storyViewModel: StoryViewModel = viewModel(),
+    storyViewModel: StoryViewModel = hiltViewModel(),
 ) {
     val uiState by storyViewModel.uiState.collectAsStateWithLifecycle()
 

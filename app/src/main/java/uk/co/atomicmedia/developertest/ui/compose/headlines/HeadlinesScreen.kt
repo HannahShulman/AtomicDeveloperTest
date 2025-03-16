@@ -19,8 +19,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import uk.co.atomicmedia.developertest.domain.entities.Headline
 import uk.co.atomicmedia.developertest.ui.compose.general.LoadingScreen
 import uk.co.atomicmedia.developertest.ui.intents.HeadlineIntent
@@ -28,7 +28,7 @@ import uk.co.atomicmedia.developertest.ui.intents.HeadlineIntent
 @Composable
 fun HeadlinesScreen(
     modifier: Modifier = Modifier,
-    headlinesViewModel: HeadlinesViewModel = viewModel(),
+    headlinesViewModel: HeadlinesViewModel = hiltViewModel(),
     onHeadlineClick: (id: String) -> Unit,
 ) {
     Surface(modifier) {

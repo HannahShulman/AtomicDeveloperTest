@@ -5,5 +5,5 @@ import uk.co.atomicmedia.developertest.data.repository.NewsRepository
 import uk.co.atomicmedia.developertest.data.repository.NewsRepositoryImpl
 
 class StoryViewModel(): ViewModel() {
-    val newsRepository = NewsRepositoryImpl()
+//    val newsRepository = NewsRepositoryImpl()
 }

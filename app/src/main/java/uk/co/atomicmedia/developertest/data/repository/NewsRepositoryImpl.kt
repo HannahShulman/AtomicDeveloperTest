@@ -6,9 +6,10 @@ import uk.co.atomicmedia.developertest.data.mappers.toHeadline
 import uk.co.atomicmedia.developertest.data.mappers.toStory
 import uk.co.atomicmedia.developertest.domain.entities.Headline
 import uk.co.atomicmedia.developertest.domain.entities.Story
+import javax.inject.Inject
 
-class NewsRepositoryImpl(
-    private val newsApi: ICoroutineNewsApi = CoroutineNewsApi()
+class NewsRepositoryImpl @Inject constructor(
+    private val newsApi: ICoroutineNewsApi
 ) : NewsRepository {
     override suspend fun fetchHeadlines(): Result<List<Headline>> {
         return kotlin.runCatching {
