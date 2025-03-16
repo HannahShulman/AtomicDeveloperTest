@@ -4,7 +4,7 @@ import uk.co.atomicmedia.developertest.data.api.dto.StoryDto
 import java.time.Instant
 
 //Toggle to test airplane mode
-const val HAS_CONNECTION = true
+const val HAS_CONNECTION = false
 
 @Deprecated("This should not be used directly by your solution.")
 val mockStories = listOf(
