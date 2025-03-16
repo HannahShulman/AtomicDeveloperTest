@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/headlinesFragment">
+
+    <fragment
+        android:id="@+id/headlinesFragment"
+        android:name="uk.co.atomicmedia.developertest.ui.view.headlines.HeadlinesFragment"
+        android:label="fragment_headlines"
+        tools:layout="@layout/fragment_headlines" >
+        <action
+            android:id="@+id/action_headlinesFragment_to_storyFragment"
+            app:destination="@id/storyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storyFragment"
+        android:name="uk.co.atomicmedia.developertest.ui.view.stories.StoryFragment"
+        android:label="fragment_story"
+        tools:layout="@layout/fragment_story" >
+        <argument
+            android:name="storyId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
